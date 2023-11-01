@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{car}" th:object="${car}">
+  <label for="name">Название</label>
+  <input type="text" id="name" th:field="*{name}">
+    <label for="type">Тип</label>
+    <input type="text" id="type" th:field="*{type}">
+    <label for="price">Цена</label>
+    <input type="text" id="price" th:field="*{price}">
+    <label for="number">Номер</label>
+    <input type="text" id="number" th:field="*{number}">
+  <input type="submit" value="Создать">
+</form>
+
+<form method="get" action="/main">
+  <input type="submit" value="главное меню">
+</form>
+</body>
+</html>

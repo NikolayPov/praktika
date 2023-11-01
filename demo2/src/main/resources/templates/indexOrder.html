@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <meta charset="UTF-8">
+    <title>Все заказы</title>
+</head>
+<body>
+  <div th:each="teach: ${order}">
+    <a th:href="@{/{id}/order(id = ${teach.getId()})}" th:text="${teach.getNumber()}"></a>
+
+  </div>
+
+<a href="/newOrder">Дабавить заказ</a>
+  <script src="/static/js/bootstrap.js"></script>
+
+  <form method="get" action="/main">
+      <input type="submit" value="главное меню">
+  </form>
+</body>
+</html>

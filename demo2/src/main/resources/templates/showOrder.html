@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${order.getId()}"></p>
+<p th:text="${order.getNumber()}"></p>
+<p th:text="${order.getAddress()}"></p>
+<p th:text="${order.getTotalPrice()}"></p>
+<p th:text="${order.getStatus()}"></p>
+
+<a th:href="@{/{id}/editOrder(id = ${order.getId()})}">Изминить</a>
+
+<form th:method="DELETE" th:action="@{/{id}/order(id = ${order.getId()})}">
+    <input type="submit" value="Удалить">
+</form>
+<form method="get" action="/main">
+    <input type="submit" value="главное меню">
+</form>
+</body>
+</html>

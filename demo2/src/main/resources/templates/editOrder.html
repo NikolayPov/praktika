@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/{id}/order(id = ${order.getId()})}" th:object="${order}">
+  <label for="number">Номер</label>
+  <input type="text" id="number" th:field="*{number}">
+  <label for="totalPrice">Цена</label>
+  <input type="text" id="totalPrice" th:field="*{totalPrice}">
+  <label for="address">Адресс</label>
+  <input type="text" id="address" th:field="*{address}">
+  <label for="status">Статус</label>
+  <input type="text" id="status" th:field="*{status}">
+  <input type="submit" value="Изминить">
+</form>
+<form method="get" action="/main">
+  <input type="submit" value="главное меню">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{supplier}" th:object="${supplier}">
+    <label for="name">Название</label>
+    <input type="text" id="name" th:field="*{name}">
+    <label for="nameprodukt">Продукт</label>
+    <input type="text" id="nameprodukt" th:field="*{nameprodukt}">
+    <label for="address">Адресс</label>
+    <input type="text" id="address" th:field="*{address}">
+    <label for="inn">inn</label>
+    <input type="text" id="inn" th:field="*{inn}">
+    <input type="submit" value="Создать">
+</form>
+<form method="get" action="/main">
+    <input type="submit" value="главное меню">
+</form>
+</body>
+</html>

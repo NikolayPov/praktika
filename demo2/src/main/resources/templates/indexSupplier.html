@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="teach: ${supplier}">
+    <a th:href="@{/{id}/supplier(id = ${teach.getId()})}" th:text="${teach.getName()}"></a>
+
+</div>
+
+<a href="/newSupplier">дабавить поставщика</a>
+<script src="/static/js/bootstrap.js"></script>
+
+<form method="get" action="/main">
+    <input type="submit" value="главное меню">
+</form>
+</body>
+</html>

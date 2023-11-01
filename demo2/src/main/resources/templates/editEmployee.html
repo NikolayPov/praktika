@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/{id}/employee(id = ${employee.getId()})}" th:object="${employee}">
+    <label for="name">Имя</label>
+    <input type="text" id="name" th:field="*{name}">
+    <label for="surname">Фамилия</label>
+    <input type="text" id="surname" th:field="*{surname}">
+    <label for="midname">Отчества</label>
+    <input type="text" id="midname" th:field="*{midname}">
+    <label for="login">login</label>
+    <input type="text" id="login" th:field="*{login}">
+    <label for="password">password</label>
+    <input type="text" id="password" th:field="*{password}">
+    <input type="submit" value="Изменить">
+</form>
+<form method="get" action="/main">
+    <input type="submit" value="главное меню">
+</form>
+</body>
+</html>
