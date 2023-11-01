@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Update typeofcar</h2>
+<div class="row">
+    <div>
+        <form action="#" th:action="@{/updatetypeofcar/{id}(id=${typeofcar.getId()})}" th:object="${typeofcar}" method="post">
+            <div class="row">
+                <div>
+                    <label for="typename" >Typename</label>
+                    <input type="text" th:field="*{typename}"  id="typename" placeholder="Typename">
+                    <span th:if="${#fields.hasErrors('typename')}" th:errors="*{typename}" ></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-5">
+                    <input type="submit" class="btn btn-primary" value="Update typeofcar">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

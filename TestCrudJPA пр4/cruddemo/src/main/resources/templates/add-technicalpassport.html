@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <h2>New Service</h2>
+  <div>
+    <div>
+      <form action="#" th:action="@{/addtechnicalpassport}" th:object="${technicalpassport}" method="post">
+        <div class="row">
+          <div >
+            <label for="number">Number</label>
+            <input type="text" th:field="*{number}" id="number" placeholder="Number">
+            <span th:if="${#fields.hasErrors('number')}" th:errors="*{number}" ></span>
+          </div>
+          <div >
+            <label for="yearofrelease" class="col-form-label">Yearofrelease</label>
+            <input type="text" th:field="*{yearofrelease}"  id="yearofrelease" placeholder="Yearofrelease">
+            <span th:if="${#fields.hasErrors('yearofrelease')}" th:errors="*{yearofrelease}" ></span>
+          </div>
+          <div >
+            <label for="registrationmark" class="col-form-label">Registrationmark</label>
+            <input type="text" th:field="*{registrationmark}"  id="registrationmark" placeholder="Registrationmark">
+            <span th:if="${#fields.hasErrors('registrationmark')}" th:errors="*{registrationmark}" ></span>
+          </div>
+        </div>
+
+        <div>
+          <select name="carcategory_id">
+            <option th:each="el : ${carcategorys}" th:value="${el.getId()}" th:text="${el.getCategoryname()}"></option>
+          </select>
+          <span th:if="${#fields.hasErrors('carcategory')}" th:errors="*{carcategory}" ></span>
+        </div>
+        <div>
+          <select name="typeofcar_id">
+            <option th:each="el : ${typeofcars}" th:value="${el.getId()}" th:text="${el.getTypename()}"></option>
+          </select>
+          <span th:if="${#fields.hasErrors('typeofcar')}" th:errors="*{typeofcar}" ></span>
+        </div>
+        <div>
+          <select name="carmodel_id">
+            <option th:each="el : ${carmodels}" th:value="${el.getId()}" th:text="${el.getModelname()}"></option>
+          </select>
+          <span th:if="${#fields.hasErrors('carmodel')}" th:errors="*{carmodel}" ></span>
+        </div>
+        <div>
+          <select name="carbrend_id">
+            <option th:each="el : ${carbrends}" th:value="${el.getId()}" th:text="${el.getBrandname()}"></option>
+          </select>
+
+        </div>
+        <div class="row">
+          <div >
+            <input type="submit"  value="Add Service">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

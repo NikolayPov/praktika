@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <h2>New executionstage</h2>
+  <div>
+    <div>
+      <form action="#" th:action="@{/addexecutionstage}" th:object="${executionstage}" method="post">
+        <div class="row">
+          <div >
+            <label for="nameexecutionstage">NameExecutionStage</label>
+            <input type="text" th:field="*{nameexecutionstage}" id="nameexecutionstage" placeholder="NameExecutionStage">
+            <span th:if="${#fields.hasErrors('nameexecutionstage')}" th:errors="*{nameexecutionstage}" ></span>
+          </div>
+        </div>
+        <div class="row">
+          <div >
+            <input type="submit"  value="Add Service">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

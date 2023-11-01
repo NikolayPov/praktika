@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>New Service</h2>
+    <div>
+        <div>
+            <form action="#" th:action="@{/addcar}" th:object="${car}" method="post">
+                <div class="row">
+                    <div >
+                        <label for="sorh">Sorh</label>
+                        <input type="text" th:field="*{sorh}" id="sorh" placeholder="Sorh">
+                        <span th:if="${#fields.hasErrors('sorh')}" th:errors="*{sorh}" ></span>
+                    </div>
+                </div>
+                <div>
+                    <select name="technicalpassport_id">
+                        <option th:each="el : ${technicalpassports}" th:value="${el.getId()}" th:text="${el.getNumber()}"></option>
+                    </select>
+                    <span th:if="${#fields.hasErrors('technicalpassport')}" th:errors="*{technicalpassport}" ></span>
+                </div>
+                <div class="row">
+                    <div >
+                        <input type="submit"  value="Add Service">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

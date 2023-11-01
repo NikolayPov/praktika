@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Update executionstage</h2>
+    <div class="row">
+        <div>
+            <form action="#" th:action="@{/updateexecutionstage/{id}(id=${executionstage.getId()})}" th:object="${executionstage}" method="post">
+                <div class="row">
+                    <div>
+                        <label for="nameexecutionstage" >NameExecutionStage</label>
+                        <input type="text" th:field="*{nameexecutionstage}"  id="nameexecutionstage" placeholder="NameExecutionStage">
+                        <span th:if="${#fields.hasErrors('nameexecutionstage')}" th:errors="*{nameexecutionstage}" ></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <input type="submit" class="btn btn-primary" value="Update carmodel">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

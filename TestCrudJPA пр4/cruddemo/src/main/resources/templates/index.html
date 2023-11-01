@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Users</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+
+    <body>
+        <div th:switch="${pasport}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div th:case="*">
+                        <h2 class="my-5">pasport</h2>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>серия</th>
+                                <th>номер</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="pasport : ${pasports}">
+                                <td th:text="${pasport.getNumber()}"></td>
+                                <td th:text="${pasport.getSeries()}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:switch="${User}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div th:case="*">
+                        <h2 class="my-5">User</h2>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Имя</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="person : ${persons}">
+                                <td th:text="${person.getName()}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:switch="${orders}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div th:case="*">
+                        <h2 class="my-5">orders</h2>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Sorh</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="orders : ${orderss}">
+                                <td th:text="${orders.getRegistrationdate()}"></td>
+                                <td th:text="${orders.getOrdertime()}"></td>
+                                <td><a th:href="@{/editorders/{id}(id=${orders.getId()})}">EDIT</a></td>
+                                <td><a th:href="@{/deleteorders/{id}(id=${orders.getId()})}">DELETE</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="my-5"><a href="/neworders">Add orders</a></p>
+                </div>
+            </div>
+        </div>
+        <div th:switch="${car}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div th:case="*">
+                        <h2 class="my-5">car</h2>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Sorh</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="car : ${cars}">
+                                <td th:text="${car.getSorh()}"></td>
+                                <td><a th:href="@{/editcar/{id}(id=${car.getId()})}">EDIT</a></td>
+                                <td><a th:href="@{/deletecar/{id}(id=${car.getId()})}">DELETE</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="my-5"><a href="/newcar">Add product</a></p>
+                </div>
+            </div>
+        </div>
+        <div th:switch="${technicalpassport}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div th:case="*">
+                        <h2 class="my-5">technicalpassport</h2>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Productname</th>
+                                <th>Productprice</th>
+                                <th>Quantity</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="technicalpassport : ${technicalpassports}">
+                                <td th:text="${technicalpassport.getNumber()}"></td>
+                                <td th:text="${technicalpassport.getYearofrelease()}"></td>
+                                <td th:text="${technicalpassport.getRegistrationmark()}"></td>
+                                <td><a th:href="@{/edittechnicalpassport/{id}(id=${technicalpassport.getId()})}">EDIT</a></td>
+                                <td><a th:href="@{/deletetechnicalpassport/{id}(id=${technicalpassport.getId()})}">DELETE</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="my-5"><a href="/newtechnicalpassport">Add product</a></p>
+                </div>
+            </div>
+        </div>
+        <div th:switch="${product}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div th:case="*">
+                        <h2 class="my-5">product</h2>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Productname</th>
+                                <th>Productprice</th>
+                                <th>Quantity</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="product : ${products}">
+                                <td th:text="${product.getProductname()}"></td>
+                                <td th:text="${product.getProductprice()}"></td>
+                                <td th:text="${product.getQuantity()}"></td>
+                                <td><a th:href="@{/editproduct/{id}(id=${product.getId()})}">EDIT</a></td>
+                                <td><a th:href="@{/deleteproduct/{id}(id=${product.getId()})}">DELETE</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="my-5"><a href="/newproduct">Add product</a></p>
+                </div>
+            </div>
+        </div>
+        <div th:switch="${executionstage}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div th:case="*">
+                        <h2 class="my-5">executionstage</h2>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Typename</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="executionstage : ${executionstages}">
+                                <td th:text="${executionstage.getNameexecutionstage()}"></td>
+                                <td><a th:href="@{/editexecutionstage/{id}(id=${executionstage.getId()})}">EDIT</a></td>
+                                <td><a th:href="@{/deleteexecutionstage/{id}(id=${executionstage.getId()})}">DELETE</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="my-5"><a href="/newexecutionstage">Add executionstage</a></p>
+                </div>
+            </div>
+        </div>
+        <div th:switch="${carcategory}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div th:case="*">
+                        <h2 class="my-5">carcategory</h2>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Typename</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="carcategory : ${carcategorys}">
+                                <td th:text="${carcategory.getCategoryname()}"></td>
+                                <td><a th:href="@{/editcarcategory/{id}(id=${carcategory.getId()})}">EDIT</a></td>
+                                <td><a th:href="@{/deletecarcategory/{id}(id=${carcategory.getId()})}">DELETE</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="my-5"><a href="/newcarcategory">Add carcategory</a></p>
+                </div>
+            </div>
+        </div>
+        <div th:switch="${typeofcar}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div th:case="*">
+                        <h2 class="my-5">typeofcar</h2>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Typename</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="typeofcar : ${typeofcars}">
+                                <td th:text="${typeofcar.getTypename()}"></td>
+                                <td><a th:href="@{/edittypeofcar/{id}(id=${typeofcar.getId()})}">EDIT</a></td>
+                                <td><a th:href="@{/deletetypeofcar/{id}(id=${typeofcar.getId()})}">DELETE</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="my-5"><a href="/newtypeofcar">Add typeofcar</a></p>
+                </div>
+            </div>
+        </div>
+        <div th:switch="${carbred}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div th:case="*">
+                        <h2 class="my-5">carbred</h2>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Brandname</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="carbred : ${carbrends}">
+                                <td th:text="${carbred.getBrandname()}"></td>
+                                <td><a th:href="@{/editcarbrend/{id}(id=${carbred.getId()})}">EDIT</a></td>
+                                <td><a th:href="@{/deletecarbrend/{id}(id=${carbred.getId()})}">DELETE</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="my-5"><a href="/newcarbrend">Add carbred</a></p>
+                </div>
+            </div>
+        </div>
+        <div th:switch="${carmodel}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div th:case="*">
+                        <h2 class="my-5">carmodel</h2>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Modelname</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="carmodel : ${carmodels}">
+                                <td th:text="${carmodel.getModelname()}"></td>
+                                <td><a th:href="@{/editcarmodel/{id}(id=${carmodel.getId()})}">EDIT</a></td>
+                                <td><a th:href="@{/deletecarmodel/{id}(id=${carmodel.getId()})}">DELETE</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="my-5"><a href="/newcarmodel">Add carmodel</a></p>
+                </div>
+            </div>
+        </div>
+        <div th:switch="${manufacturer}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div th:case="*">
+                        <h2 class="my-5">manufacturer</h2>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Company_name</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="manufacturer : ${manufacturers}">
+                                    <td th:text="${manufacturer.getCompany_name()}"></td>
+                                    <td><a th:href="@{/editmanufacturer/{id}(id=${manufacturer.getId()})}">EDIT</a></td>
+                                    <td><a th:href="@{/deletemanufacturer/{id}(id=${manufacturer.getId()})}">DELETE</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="my-5"><a href="/newmanufacturer">Add manufacturer</a></p>
+                </div>
+            </div>
+        </div>
+        <div th:switch="${service}" class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div th:case="*">
+                        <h2 class="my-5">service</h2>
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Name_service</th>
+                                <th>Service_price</th>
+                                <th>Description_service</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="service : ${services}">
+                                <td th:text="${service.getName_service()}"></td>
+                                <td th:text="${service.getService_price()}"></td>
+                                <td th:text="${service.getDescription_service()}"></td>
+                                <td><a th:href="@{/edit/{id}(id=${service.getId()})}">EDIT</a></td>
+                                <td><a th:href="@{/delete/{id}(id=${service.getId()})}">DELETE</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="my-5"><a href="/new">Add service</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

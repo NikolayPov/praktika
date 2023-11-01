@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>Update manufacturer</h2>
+    <div class="row">
+        <div>
+            <form action="#" th:action="@{/updatemanufacturer/{id}(id=${manufacturer.getId()})}" th:object="${manufacturer}" method="post">
+                <div class="row">
+                    <div>
+                        <label for="company_name" >Came_service</label>
+                        <input type="text" th:field="*{company_name}"  id="company_name" placeholder="Company_name">
+                        <span th:if="${#fields.hasErrors('company_name')}" th:errors="*{company_name}" ></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <input type="submit" class="btn btn-primary" value="Update manufacturer">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

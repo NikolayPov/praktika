@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <h2>New carbrend</h2>
+  <div>
+    <div>
+      <form action="#" th:action="@{/addcarbrend}" th:object="${carbrend}" method="post">
+        <div class="row">
+          <div >
+            <label for="brandname">Brandname</label>
+            <input type="text" th:field="*{brandname}" id="brandname" placeholder="Brandname">
+            <span th:if="${#fields.hasErrors('brandname')}" th:errors="*{brandname}" ></span>
+          </div>
+        </div>
+        <div class="row">
+          <div >
+            <input type="submit"  value="Add carbred">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

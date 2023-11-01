@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Add Customer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    </head>
+    <body>
+        <div>
+            <h2>New Service</h2>
+            <div>
+                <div>
+                    <form action="#" th:action="@{/addservice}" th:object="${service}" method="post">
+                        <div class="row">
+                            <div >
+                                <label for="name_service">Name_service</label>
+                                <input type="text" th:field="*{name_service}" id="name_service" placeholder="Name_service">
+                                <span th:if="${#fields.hasErrors('name_service')}" th:errors="*{name_service}" ></span>
+                            </div>
+                            <div >
+                                <label for="service_price" class="col-form-label">Service_price</label>
+                                <input type="text" th:field="*{service_price}"  id="service_price" placeholder="Service_price">
+                                <span th:if="${#fields.hasErrors('service_price')}" th:errors="*{service_price}" ></span>
+                            </div>
+                            <div >
+                                <label for="description_service" class="col-form-label">Description_service</label>
+                                <input type="text" th:field="*{description_service}"  id="description_service" placeholder="Description_service">
+                                <span th:if="${#fields.hasErrors('description_service')}" th:errors="*{description_service}" ></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div >
+                                <input type="submit"  value="Add Service">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

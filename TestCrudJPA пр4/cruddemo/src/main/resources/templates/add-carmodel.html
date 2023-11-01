@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2>New car_model</h2>
+    <div>
+        <div>
+            <form action="#" th:action="@{/addcarmodel}" th:object="${carmodel}" method="post">
+                <div class="row">
+                    <div >
+                        <label for="modelname">Modelname</label>
+                        <input type="text" th:field="*{modelname}" id="modelname" placeholder="Modelname">
+                        <span th:if="${#fields.hasErrors('modelname')}" th:errors="*{modelname}" ></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div >
+                        <input type="submit"  value="Add Service">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
