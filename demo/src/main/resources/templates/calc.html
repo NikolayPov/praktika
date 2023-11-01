@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Калькулятор</h1>
+
+<form method="get" action="/home">
+    <input type="submit" value="На главную">
+</form>
+<br>
+<form method="post" action="/calc">
+    Первое значение: <input type="input" name="number1">
+    Второе значение: <input type="input" name="number2">
+
+    Действие: <select name="Select1">
+        <option value="+">сложение</option>
+        <option value="-">вычетание</option>
+        <option value="*">умножение</option>
+        <option value="/">диление</option>
+        <option value="%">остаток от целочисленнгого деления</option>
+    </select>
+    <br>
+    <br>
+    <input type="submit" value="Вычеслить">
+</form>
+
+
+
+
+
+</body>
+</html>
